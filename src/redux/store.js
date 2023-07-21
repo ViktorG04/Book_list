@@ -13,13 +13,15 @@ const allReducers = combineReducers({
   theme: themeReducer,
 });
 
+const secretKey = import.meta.env.VITE_SECRET_STORE || "";
+
 //create config to save in storage
 const persistConfig = {
   key: "App",
   storage,
   transforms: [
     encryptTransform({
-      secretKey: "dh8udsj28728dja2da",
+      secretKey: secretKey,
     }),
   ],
 };
