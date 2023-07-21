@@ -4,7 +4,7 @@ import useRemove from "./useRemove";
 const useFilter = () => {
   const { availableBooks } = useRemove();
 
-  const [filters, setFilters] = useState({ genre: "All", pages: "100" });
+  const [filters, setFilters] = useState({ genre: "All", pages: "10" });
 
   const handleOnChange = (event) => {
     setFilters({ ...filters, [event.target.name]: event.target.value });

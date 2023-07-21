@@ -1,7 +1,6 @@
-import Book from "./Book";
 import { useDispatch } from "react-redux";
 import { addBook } from "../../redux/bookSlice";
-
+import Book from "./Book";
 import "./index.css";
 
 const BookList = ({ books = [] }) => {
@@ -22,7 +21,7 @@ const BookList = ({ books = [] }) => {
               onHandleDetails={() => onHandleAddBook(book.book)}
             />
           ))
-        : null}
+        : <p>No books available</p>}
     </section>
   );
 };

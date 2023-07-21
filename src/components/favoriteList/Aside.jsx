@@ -13,7 +13,7 @@ const Aside = () => {
       style={books.length ? null : { display: "none" }}
       id={theme ? "Dark-gradient" : "Light-gradient"}
     >
-      <h2>List to read</h2>
+      <h2>{books.length} books in list</h2>
       <ReadList books={books} />
     </section>
   );

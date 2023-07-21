@@ -33,4 +33,8 @@
   .label-input label {
     font-size: 1.5rem;
   }
+
+  .label-input select {
+    width: 20vh;
+  }
 }
