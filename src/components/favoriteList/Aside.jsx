@@ -4,17 +4,17 @@ import { useSelector } from "react-redux";
 import "./index.css";
 
 const Aside = () => {
-  const { books } = useSelector((state) => state.books);
+  const { favoriteBooks, inList } = useSelector((state) => state.books);
   const { theme } = useSelector((state) => state.theme);
 
   return (
     <section
       className="aside"
-      style={books.length ? null : { display: "none" }}
+      style={inList ? null : { display: "none" }}
       id={theme ? "Dark-gradient" : "Light-gradient"}
     >
-      <h2>{books.length} books in list</h2>
-      <ReadList books={books} />
+      <h2>{inList} books in list</h2>
+      <ReadList books={favoriteBooks} />
     </section>
   );
 };

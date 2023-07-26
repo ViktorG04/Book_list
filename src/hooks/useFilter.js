@@ -1,8 +1,11 @@
 import { useState } from "react";
 import useRemove from "./useRemove";
+import useFetch from "./useFetch";
 
 const useFilter = () => {
-  const { availableBooks } = useRemove();
+
+  const { data } = useFetch();
+  const { availableBooks } = useRemove({library: data});
 
   const [filters, setFilters] = useState({ genre: "All", pages: "10" });
 
