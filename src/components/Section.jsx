@@ -6,12 +6,15 @@ import useFilter from "../hooks/useFilter";
 import "../app.css";
 
 const Section = () => {
-  const { available, inList } = useSelector((state) => state.books);
+  const { inList } = useSelector((state) => state.books);
   const { filters, handleOnChange, filteredBooks } = useFilter();
 
   return (
-    <section className="main_section" style={inList ? { width: "60%" } : { width: "70%" }}>
-      <Header available={available} />
+    <section
+      className="main_section"
+      style={inList ? { width: "60%" } : { width: "70%" }}
+    >
+      <Header />
       <Filters filters={filters} handleOnChange={handleOnChange} />
       <BookList books={filteredBooks} />
     </section>

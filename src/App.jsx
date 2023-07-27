@@ -7,7 +7,7 @@ function App() {
   const { theme } = useSelector((state) => state.theme);
 
   return (
-    <main className="main" id={theme ? "Dark": "Light"}>
+    <main className="main" id={theme ? "Dark" : "Light"}>
       <Section />
       <Aside />
     </main>

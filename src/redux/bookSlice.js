@@ -4,8 +4,8 @@ const initialState = {
   favoriteBooks: [],
   inLibrary: 0,
   available: 0,
-  inList: 0
-}
+  inList: 0,
+};
 
 export const bookSlice = createSlice({
   name: "books",
@@ -22,7 +22,9 @@ export const bookSlice = createSlice({
       state.available = state.inLibrary - state.inList;
     },
     deleteBook: (state, action) => {
-      state.favoriteBooks = state.favoriteBooks.filter((book) => book.ISBN !== action.payload);
+      state.favoriteBooks = state.favoriteBooks.filter(
+        (book) => book.ISBN !== action.payload
+      );
       state.inList = state.favoriteBooks.length;
       state.available = state.inLibrary - state.inList;
     },

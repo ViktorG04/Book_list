@@ -1,9 +1,9 @@
 import React from "react";
-import "./filter.css";
 import useSelect from "../hooks/useSelect";
+import "./filter.css";
 
 const Filters = ({ filters, handleOnChange }) => {
-  const {genres} = useSelect();
+  const { genres } = useSelect();
 
   return (
     <section className="form">
@@ -21,9 +21,16 @@ const Filters = ({ filters, handleOnChange }) => {
       </div>
       <div className="label-input">
         <label htmlFor="genre">filter by genre</label>
-        <select name="genre" value={filters.genre} onChange={handleOnChange} id="genre">
+        <select
+          name="genre"
+          value={filters.genre}
+          onChange={handleOnChange}
+          id="genre"
+        >
           {genres.map((genre, index) => (
-            <option key={`option-${index}`} value={genre}>{genre}</option>
+            <option key={`option-${index}`} value={genre}>
+              {genre}
+            </option>
           ))}
         </select>
       </div>

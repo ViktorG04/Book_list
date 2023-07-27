@@ -3,9 +3,8 @@ import useRemove from "./useRemove";
 import useFetch from "./useFetch";
 
 const useFilter = () => {
-
   const { data } = useFetch();
-  const { availableBooks } = useRemove({library: data});
+  const { availableBooks } = useRemove({ library: data });
 
   const [filters, setFilters] = useState({ genre: "All", pages: "10" });
 

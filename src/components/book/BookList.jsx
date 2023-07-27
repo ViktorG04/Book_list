@@ -12,16 +12,18 @@ const BookList = ({ books = [] }) => {
 
   return (
     <section className="books">
-      {books.length
-        ? books.map((book) => (
-            <Book
-              key={book.book.ISBN}
-              url={book.book.cover}
-              title={book.book.title}
-              onHandleDetails={() => onHandleAddBook(book.book)}
-            />
-          ))
-        : <p>No books available</p>}
+      {books.length ? (
+        books.map((book) => (
+          <Book
+            key={book.book.ISBN}
+            url={book.book.cover}
+            title={book.book.title}
+            onHandleDetails={() => onHandleAddBook(book.book)}
+          />
+        ))
+      ) : (
+        <p>No books available</p>
+      )}
     </section>
   );
 };
