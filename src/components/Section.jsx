@@ -3,7 +3,7 @@ import Header from "./Header";
 import Filters from "./Filters";
 import BookList from "./book/BookList";
 import useFilter from "../hooks/useFilter";
-import "../app.css";
+import "../App.css";
 
 const Section = () => {
   const { inList } = useSelector((state) => state.books);
